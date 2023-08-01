@@ -12,3 +12,4 @@
 还是别自己造轮子了，要实现的和slam还是差不多，不如直接用。感恩教程http://t.csdn.cn/YZKV8 ，感恩解读http://t.csdn.cn/x02hd 。
 
 ---
+他妈的Ubuntu的unattended upgrade真恶心人啊。直接sudo apt remove unattended-upgrades说拜拜。

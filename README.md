@@ -9,7 +9,10 @@
 粗定位打算使用词袋法进行快速匹配，精定位试试pnp。
 
 ---
-还是别自己造轮子了，要实现的和slam还是差不多，不如直接用。感恩教程http://t.csdn.cn/YZKV8 ，感恩解读http://t.csdn.cn/x02hd 。
+还是别自己造轮子了，要实现的和slam还是差不多，不如直接用。（×）感恩教程http://t.csdn.cn/YZKV8 （×），感恩解读http://t.csdn.cn/x02hd 。
 
 ---
 跑公共数据集出现了不显示轨迹的奇怪错误，一天多解决不了重走流程吧，可能环境某个包冲突了。还有他妈的Ubuntu的unattended upgrade真恶心人啊。直接sudo apt remove unattended-upgrades说拜拜。
+
+---
+终于跑出来了，但不是在Ubuntu20上，上面那教程不行，走了两遍流程稳定的没有轨迹，根本不行，还是在16.04上简单方便，教程http://t.csdn.cn/3Pyy2 。

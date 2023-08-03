@@ -5,10 +5,10 @@
 粗定位大多使用词袋法进行快速匹配，精定位采用pnp。这与vins-mono中进行定位的思想是一致的，所以直接使用现有的/成熟的vins算法。以下是复刻这个项目并制作自己的数据集的方法。
 
 ---
-终于跑出来了，但不是在Ubuntu20上，上面那教程不行，走了两遍流程稳定的没有轨迹，根本不行，还是在16.04上简单方便，教程http://t.csdn.cn/3Pyy2 。
-安装环境： ubuntu16.04+ROS kinetic+opencv3.3.1+eigen3.3.3+ceres solver 1.14 
-首先把Ubuntu16.04版本装好。
-然后  
+终于跑出来了，但不是在Ubuntu20上，上面那教程不行，走了两遍流程稳定的没有轨迹，根本不行，还是在16.04上简单方便，教程http://t.csdn.cn/3Pyy2 。  
+安装环境： ubuntu16.04+ROS kinetic+opencv3.3.1+eigen3.3.3+ceres solver 1.14   
+首先把Ubuntu16.04版本装好。  
+然后   
 一.ROS Kinetic的安装  
 1.设置sources.list  
 ```
@@ -140,4 +140,13 @@ source ~/catkin_ws/devel/setup.bash
 rosbag play ~/数据集的路径(我的路径是home/yhr/下载/)/MH_01_easy.bag
 ```
 ---
-依然是做自己的数据集，http://t.csdn.cn/nAZiw ，好消息，数据集做出来了，也正常跑了，坏消息，结果不正常，尤其是轨迹很离谱，乱飞，还没标定，应该要标定改参数。    
+依然是做自己的数据集，http://t.csdn.cn/nAZiw ，好消息，数据集做出来了，也正常跑了，坏消息，结果不正常，尤其是轨迹很离谱，乱飞，还没标定，应该要标定改参数。  
+先下载用于手机记录数据的app,下载Marslogger，使用方法很简单，注意设置分辨率640×480，其余默认即可，可得到30帧率视频与100帧率的imu数据。  
+然后使用python程序处理原始数据为rosbag。  
+要下载kalibr_bagcreater.py，地址https://github.com/JzHuai0108/vio_common/blob/master/python/kalibr_bagcreater.py#L128-L133
+在下载https://github.com/JzHuai0108/vio_common/blob/master/python/utility_functions.py  
+两个python文件和三个数据文件放在catkin_ws（工作空间）下的自建文件夹dataset中，终端上在改目录下运行
+```
+rosrun kalibr kalibr_calibrate_rs_cameras --model pinhole-radtan-rs --target aprilgrid.yaml  --topic /img_pub/camera/image/left  --bag cam_only.bag  --inverse-feature-variance 1  --frame-rate 30
+```
+这就打包好了，接下来进行标定改配置文件参数。  

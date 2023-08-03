@@ -31,10 +31,10 @@ source ~/.bashrc
 ```  
 7.安装依赖项  
 ```sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool bu```
-ros安装好后，安装vins所需的库。
-先要下载好安装环境中需要的库的文件再开始编译安装。
-二.opencv3.3.1的安装
-1.下载opencv包
+ros安装好后，安装vins所需的库。  
+先要下载好安装环境中需要的库的文件再开始编译安装。  
+二.opencv3.3.1的安装  
+1.下载opencv包  
 2.安装pip和numpy
 ```
 sudo apt install python-pip
@@ -57,18 +57,18 @@ cmake ..
 make
 sudo make install
 ```
-5.安装完成
+5.安装完成  
 
-三.eigen3.3.3的安装
+三.eigen3.3.3的安装  
 1.安装
 ```
 sudo apt-get install libeigen3-dev
 ```
-四.ceres1.14的安装
-1.github的下载链接
-链接: https://github.com/ceres-solver/ceres-solver/tree/master
-注意（这里的branch要切换到1.14版本）
-2.安装依赖项
+四.ceres1.14的安装  
+1.github的下载链接  
+链接: https://github.com/ceres-solver/ceres-solver/tree/master  
+注意（这里的branch要切换到1.14版本）  
+2.安装依赖项  
 注意：若为Ubuntu14.04则应为libcxsparse3.1.2
 ```
 sudo apt-get install liblapack-dev libsuitesparse-dev libcxsparse3.1.4 libgflags-dev libgoogle-glog-dev libgtest-dev
@@ -96,10 +96,10 @@ cmake ..
 make
 sudo make install
 ```
-安装完成
-五.数据集的下载与运行
-1.下载EuRoC数据集
-可到其官网下载，下载格式为.bag的。
+安装完成  
+五.数据集的下载与运行  
+1.下载EuRoC数据集  
+可到其官网下载，下载格式为.bag的。  
 
 2.创建ROS工作空间
 ```
@@ -114,8 +114,8 @@ git clone https://github.com/HKUST-Aerial-Robotics/VINS-Mono.git
 cd ../
 catkin_make
 ```
-4.运行VINS
-打开三个终端，
+4.运行VINS  
+打开三个终端，  
 第一个终端：
 ```
 source ~/catkin_ws/devel/setup.bash
